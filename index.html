@@ -17,42 +17,54 @@
           <div class="input-element">
             <input
               type="text"
-              id="taksk-input"
+              id="task-input"
               placeholder="Ingresa una tarea"
             />
             <button id="btn-add-task">Agregar</button>
           </div>
         </div>
 
-        <!-- contadores -->
+       
         <div class="area-registros">
-          <div class="contadores-valores">
-            <p id="task-amount">Total : 0</p>
-            <div class="realizadas">
-              <p id="task-done">
-                <i class="fa-solid fa-check"></i>Realizados : 0
-              </p>
-            </div>
-          </div>
-        </div>
+              <!-- contadores -->
+              <div class="contadores-valores">
+                <p id="task-amount">Total : 0</p>
+                <div class="realizadas">
+                  <p id="task-done">
+                    <i class="fa-solid fa-check"></i>Realizados : 0
+                  </p>
+                </div>
+              </div>
 
-        <!-- lista renderizada -->
+                      <!-- lista renderizada -->
         <div class="info-area">
+
           <div class="lista-area">
+
             <div class="render-header">
-              <div class="render-header-item">
-                <h4>ID</h4>
+              <div >
+                <h4 class="render-header-item">ID</h4>
               </div>
 
-              <div class="render-header-item">
-                <h4>Tarea</h4>
+              <div >
+                <h4 class="render-header-item">Tarea</h4>
               </div>
+
+            </div>
               <!-- lista renderizada -->
               <ul id="lista-tareas"></ul>
-            </div>
           </div>
+
         </div>
+
+
+
+        </div>
+
+
+
       </div>
+      <button onclick="alert(startMessage)" class="repeat-button">Repetir instrucciones</button>
     </div>
 
     <script
