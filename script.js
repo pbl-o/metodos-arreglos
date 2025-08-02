@@ -16,6 +16,12 @@ const taskAmount = document.getElementById('task-amount'); // contador de tareas
 const taskDone = document.getElementById('task-done'); // contador de trabajos realizados (DOMs)
 
 
+//LISTAS
+
+const listOfTasks = [];
+const dummyTasks = ["Comer pan", "Hacer ejercicio", "Tomar jugo"]; //tareas predeterminadas
+
+
 // LISTENERS
 
 
@@ -27,15 +33,61 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 //Agregar tarea cada vez que se haga click en el botón
 btnTask.addEventListener('click', ()=>{
-    // agregar tarea
+
+    
+    //agregar elemento tarea {tarea} dentro de un array 
+    let newTask = inputAdd.value; 
+    listOfTasks.push({id: Date.now(), name: newTask, done: false});
+    renderTask(listOfTasks); //renderizar tarea como un elemento de la lista
+
+    //modificar contador del DOM utilizando valor de extensión del array:
+    taskAmount.innerText = `Total: ${listOfTasks.length}`;
+
+    //Reinicializar valor del input
+    inputAdd.value = "";
+
+
 })
 
 
 //FUNCIONES
 
-//Render: Generación de tarea en DOM
+//Render: Generación de tarea en DOM:
+
 const renderTask = (lista) =>{
-    // crear elemento html que conenga ID de tarea, nombre de tarea y botones de "realziado" y "eliminar tarea"
+let html = '';
+for(item of lista){
+    html+= 
+    `
+    <li>
+    
+        <div class="id-render-area">
+
+            <div class="id-div">
+                ${item.id}
+            </div>
+        
+            <div class="name-div">
+                ${item.name}
+            </div>
+
+        </div>
+
+        <div class="check-render-area">
+            <input type="checkbox" class="task-state" id="${item.id} onclick="boxChecker(${item.id})" ${item.done ? 'checked' : ''}>
+        </div>
+
+        <div class="button-render-area">
+            <button class="close-button onlcick="borrarTarea(${item.id}">
+                <i class="fa-solid fa-xmark"></i>
+            </buton>
+        </div>
+        
+
+    </li>`;
+    
+}
+renderList.innerHTML = html;
 }
 
 //Eliminar Tarea
