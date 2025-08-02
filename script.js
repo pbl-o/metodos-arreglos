@@ -109,13 +109,23 @@ const borrarTarea = (id) =>{
 }
 //modificar estado de checkbox / condición: realizada 
 const boxChecker = (id) => {
-    //buscar index y revisar y el estado realizado si es aplicable:
-    //filtrar
-    //renderizar
-}
+    const index = listOfTasks.findIndex((item) => item.id == id);
 
+    listOfTasks[index].done === false 
+    ?   listOfTasks[index].done = true 
+   :   listOfTasks[index].done = false 
+
+    filtroTareasRealizadas(listOfTasks);
+    renderTask(listOfTasks);
+
+
+
+
+}
 //filtrar las tares realizadas dentro del lista de tareas
 const filtroTareasRealizadas = (lista) => {
-    //filtrar tareas basandose en la llave realizado (se buscan tareas realizadas (true))
-    // se modifica el contador en el DOM.
-}
+
+    const filtered = listOfTasks.filter((item) => item.done === true);
+    taskDone.innerText =`Realizados : ${filtered.length}`;
+
+};
