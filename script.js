@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 //Agregar tarea cada vez que se haga click en el botón
 btnTask.addEventListener('click', ()=>{
 
-    
+
     //agregar elemento tarea {tarea} dentro de un array 
     let newTask = inputAdd.value; 
     listOfTasks.push({id: Date.now(), name: newTask, done: false});
@@ -61,26 +61,30 @@ for(item of lista){
     `
     <li>
     
-        <div class="id-render-area">
-
-            <div class="id-div">
-                ${item.id}
-            </div>
+        <div class="task-render">
         
-            <div class="name-div">
-                ${item.name}
-            </div>
+                <div class="id-render-area">
 
-        </div>
+                    <div class="id-div">
+                        ${item.id}
+                    </div>
 
-        <div class="check-render-area">
-            <input type="checkbox" class="task-state" id="${item.id} onclick="boxChecker(${item.id})" ${item.done ? 'checked' : ''}>
-        </div>
+                    <div class="name-div">
+                        ${item.name}
+                    </div>
 
-        <div class="button-render-area">
-            <button class="close-button onlcick="borrarTarea(${item.id}">
-                <i class="fa-solid fa-xmark"></i>
-            </buton>
+                </div>
+
+                <div class="check-render-area">
+                    <input type="checkbox" class="task-state" id="${item.id} onclick="boxChecker(${item.id})" ${item.done ? 'checked' : ''}>
+                </div>
+
+                <div class="button-render-area">
+                    <button class="close-button onlcick="borrarTarea(${item.id}">
+                    <i class="fa-solid fa-xmark"></i>
+                    </buton>
+                </div>
+        
         </div>
         
 
@@ -91,13 +95,18 @@ renderList.innerHTML = html;
 }
 
 //Eliminar Tarea
-const borrarTarea = () =>{
-    // borrar tarea de la lista de tareas
-    //renderizar lista actualizada
-    // cambiar cuenta del dom
-    //filtrar tareas marcadas como realizadas al borrar alguna(si es que aplica)
-}
+const borrarTarea = (id) =>{
 
+    const index = listOfTasks.findIndex((item) => item.id == id);
+    listOfTasks.splice(index,1);
+    renderTask(listOfTasks);
+
+    //modificar contador del DOM utilizando valor de extensión del array:
+    taskAmount.innerText = `Total: ${listOfTasks.length}`;
+    
+    filtroTareasRealizadas(listOfTasks);
+
+}
 //modificar estado de checkbox / condición: realizada 
 const boxChecker = (id) => {
     //buscar index y revisar y el estado realizado si es aplicable:
