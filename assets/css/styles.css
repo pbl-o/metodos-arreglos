@@ -281,23 +281,61 @@ width: 50%;
 
     .to-do-list-container {
 
-  width: 70%;
+  width: 80%;
 }
 
+.contadores-valores{
+  font-size: 1.1rem;
+}
+
+.id-div{
+  font-size: .8rem;
+
+}
+
+.name-div{
+font-size: .9rem;
+}
 
 
 }
 
 @media (min-width: 992px){
+
+
+
     .render-header-item{
     width: 29%;
 }
 
-.to-do-list-container {
+    .to-do-list-container {
 
-  width: 48%;
+  width: 70%;
+}
+
+
+.info-area {
+width: 60%;
+
 
 }
+
+
+}
+
+@media (min-width: 1200px){
+
+
+
+    .render-header-item{
+    width: 29%;
+}
+
+    .to-do-list-container {
+
+  width: 55%;
+}
+
 
 .info-area {
 width: 60%;
