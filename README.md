@@ -4,7 +4,7 @@
 
 ### Link directo:
 
-https://pbl-o.github.io/arreglos-objetos/
+https://pbl-o.github.io/metodos-arreglos/
 
 El proyecto consiste en la creación de una página
 web que permita mantener un control de tareas pendientes.
