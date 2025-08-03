@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+  color: #333;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.to-do-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+  height: auto;
+  border: 1px solid #c1c1c1;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  overflow-y: auto;
+  margin-top: 1rem;
+}
+.to-do-list-container h1 {
+  align-self: start;
+}
+
+/* INPUT */
+.input-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+  width: 100%;
+  padding: 0.6rem 0;
+  /* background-color: gray; */
+}
+
+.input-element {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  gap: 0.5rem;
+  /* background-color: blue; */
+}
+
+.input-element input {
+  width: 100%;
+  padding: .2rem .4rem;
+}
+
+
+
+/* botón agregar */
+
+.repeat-button,
+#btn-add-task {
+  padding: 0.3rem 0.8rem;
+  border: none;
+  background-color: #198754;
+  color: #ddd;
+  transition: all 0.3s ease-in-out;
+  justify-self: start;
+  border-radius: 3px;
+}
+
+.repeat-button:hover,
+#btn-add-task:hover {
+  filter: invert(100%);
+  cursor: pointer;
+}
+
+.area-registros {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  padding: .2rem;
+
+  
+}
+
+/* contador valores */
+
+.contadores-valores {
+  width: 35%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: .5rem;
+ flex-wrap: wrap;
+  font-size: .9rem;
+
+
+}
+
+.realizadas {
+  width: 90%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+}
+
+.realizadas i {
+  font-size: 0.6rem;
+  margin: .1rem .1rem;
+  color: #198754;
+}
+
+/* area de render */
+
+.info-area {
+
+  width: 60%;
+
+}
+.render-header {
+  display: flex;
+  justify-content: start;
+
+}
+
+.render-header-item{
+    width: 30%;
+}
+
+/* render */
+/* html */
+
+/* Js rendered elements */
+li {
+  list-style-type: none;
+  padding: .1rem;
+}
+
+.task-render {
+
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+
+  
+}
+
+
+.id-render-area{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  gap: .3rem;
+
+}
+
+.id-div{
+    width: 40%;
+
+    font-size: .6rem;
+}
+
+.name-div{
+    width: 55%;
+    font-size: .75rem;
+
+}
+
+
+.check-render-area{
+    margin: .15rem;
+    align-self: center;
+
+}
+
+.check-render-area input {
+  width: 1rem;
+  height: 1rem;
+  transition: filter 0.3s ease-in-out;
+}
+
+.check-render-area input:hover {
+  filter: invert(70%);
+}
+
+.button-render-area{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .1rem;
+}
+
+.button-render-area .close-button {
+  padding: 0 0.3rem;
+  transition: filter 0.3s ease-in-out;
+  border: 1px solid #a1a1a1;
+  border-radius: 2px;
+}
+
+.button-render-area i {
+  color: #bd0000;
+}
+
+.button-render-area .close-button:hover {
+  filter: invert(70%);
+  cursor: pointer;
+}
+
+.repeat-button {
+  margin-top: 10rem;
+}
+
+
+@media (min-width: 576px){
+
+
+
+.contadores-valores{
+
+    flex-direction: row;
+}
+
+.realizadas{
+    width:55%;
+}
+
+
+
+
+
+
+
+
+/* Rendered ID | */
+
+
+
+.id-render-area {
+  width: 70%;
+
+}
+
+.id-div{
+    width: 40%;
+
+    font-size: .7rem;
+}
+
+.name-div{
+    width: 50%;
+
+}
+
+.info-area {
+width: 50%;
+
+
+}
+
+}
+
+@media (min-width: 767px){
+
+    .to-do-list-container {
+
+  width: 70%;
+}
+
+
+
+}
+
+@media (min-width: 992px){
+    .render-header-item{
+    width: 29%;
+}
+
+.to-do-list-container {
+
+  width: 48%;
+
+}
+
+.info-area {
+width: 60%;
+
+
+}
+
+
+}
+
